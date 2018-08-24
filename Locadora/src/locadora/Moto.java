@@ -9,61 +9,28 @@ package locadora;
  *
  * @author curso
  */
-public class Moto {
-    private int ano;
-    private String modelo;
-    private String marca;
-    private int quilometragem;
-    private String placa;
+public class Moto extends Veiculo {
     private int cilindradas;
     
-    public int getAno() {
-        return this.ano;
+    public Moto() {
     }
     
-    public void setAno(int ano) {
-        this.ano = ano;
+    public Moto(int l_ano, String l_modelo, String l_marca, int l_quilometragem, String l_placa, int l_cilindradas) {
+        super(l_ano,l_modelo,l_marca,l_quilometragem,l_placa);
+        this.cilindradas = l_cilindradas;
     }
-    
-    public String getModelo() {
-        return this.modelo;
-    }
-    
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-    
-    public String getMarca() {
-        return this.marca;
-    }
-    
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-    
-    public int getQuilometragem() {
-        return this.quilometragem;
-    }
-    
-    public void setQuilometragem(int quilometragem) {
-        this.quilometragem = quilometragem;
-    }
-    
-    public String getPlaca() {
-        return this.placa;
-    }
-    
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-    
+           
     public int getCilindradas() {
         return this.cilindradas;
     }
     
-    public void setCilindradas(int cilindradas) {
-        this.cilindradas = cilindradas;
-    }
-    
+    public void setCilindradas(int l_cilindradas) {
+        this.cilindradas = l_cilindradas;
+    }   
+
+    @Override
+    public String toString() {
+        return super.toString() + ", cilindradas=" + this.cilindradas + '}';        
+    }        
     
 }

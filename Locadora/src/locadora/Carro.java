@@ -9,59 +9,29 @@ package locadora;
  *
  * @author curso
  */
-public class Carro {
-    private int ano;
-    private String modelo;
-    private String marca;
-    private int quilometragem;
-    private String placa;
+public class Carro extends Veiculo {
     private int porta;
     
-    public int getAno() {
-        return this.ano;
+    public Carro() {
     }
-    
-    public void setAno(int ano) {
-        this.ano = ano;
+ 
+    public Carro(int l_ano, String l_modelo, String l_marca, int l_quilometragem, String l_placa, int l_porta) {
+        super(l_ano,l_modelo,l_marca,l_quilometragem,l_placa);
+        this.porta = l_porta;
     }
-    
-    public String getModelo() {
-        return this.modelo;
-    }
-    
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-    
-    public String getMarca() {
-        return this.marca;
-    }
-    
-    public void setMarca(String marca){
-        this.marca = marca;
-    }
-    
-    public int getQuilometragem() {
-        return this.quilometragem;
-    }
-    
-    public void setQuilometragem(int quilometragem) {
-        this.quilometragem = quilometragem;
-    }
-    
-    public String getPlaca() {
-        return this.placa;
-    }
-    
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-    
+        
     public int getPorta() {
         return this.porta;
     }
     
-    public void setPorta(int porta) {
-        this.porta = porta;
+    public void setPorta(int l_placa) {
+        this.porta = l_placa;
     }
+    
+    @Override
+    public String toString() {
+        return super.toString() + ", porta=" + this.porta + '}';        
+    }  
+
 }
+

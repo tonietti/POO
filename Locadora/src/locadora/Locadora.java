@@ -17,35 +17,29 @@ public class Locadora {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Cliente c1 = new Cliente();
-        Cliente c2 = new Cliente();
-        Perfil p1 = new Perfil("01/02/2011");
+        Perfil p1 = new Perfil("01/02/2011",0,2);
         Perfil p2 = new Perfil("11/8/2018");
-        Carro cr1 = new Carro();
+                        
+        Cliente c1 = new Cliente("Joao","01/02/1980",30,p1);
+        Cliente c2 = new Cliente();  
+
+        Carro cr1 = new Carro(1990,"uno","fiat",154000,"itt-5565",4);
         Carro cr2 = new Carro();
-        Moto mt1 = new Moto();
+        
+        Moto mt1 = new Moto(1990,"titan","honda",169000,"idf-5541",150);
         Moto mt2 = new Moto();
+            
+              
+        System.out.println(c1.toString());
+        System.out.println(c2.toString());
         
-        c1.setNome("Joao");
-        c1.setNascimento("01/02/1980");
-        c1.setDesconto(30);
-        c1.setPerfil(p1);
+        System.out.println(p1.toString());
+        System.out.println(p2.toString());   
+       
+        System.out.println(cr1.toString());
+        System.out.println(cr2.toString());
         
-        p1.setAcidente(0);
-        p1.setMulta(2);
-        
-        cr1.setAno(1990);
-        cr1.setModelo("uno");
-        cr1.setMarca("fiat");
-        cr1.setQuilometragem(154000);
-        cr1.setPlaca("itt-5565");
-        cr1.setPorta(4);
-        
-        mt1.setAno(1990);
-        mt1.setModelo("titan");
-        mt1.setMarca("honda");
-        mt1.setQuilometragem(169000);
-        mt1.setPlaca("idf-5541");
-        mt1.setCilindradas(150);
+        System.out.println(mt1.toString());
+        System.out.println(mt2.toString());
     }
 }

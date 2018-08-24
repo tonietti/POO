@@ -18,17 +18,39 @@ public class Cliente {
     private Date nascimento;
     private int desconto;
     private Perfil perfil;
+
+    public Cliente() {
+        this.nascimento = new Date();
+    }
+    
+    public Cliente(String l_nome, String data, int l_desconto, Perfil l_perfil) {
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy"); //HH:mm:ss
+        Date recebeDataFormatada = null; 
+        
+        try{
+        recebeDataFormatada = dataFormatada.parse(data); 
+        }catch(ParseException e) { 
+           
+        }
+        
+        this.nome = l_nome;
+        this.nascimento = recebeDataFormatada;
+        this.desconto = l_desconto;
+        this.perfil = l_perfil;
+    }
+    
+    
     
     public String getNome() {
         return this.nome;
     }
     
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String l_nome) {
+        this.nome = l_nome;
     }
     
-    public Date getNascimento() {
-        return this.nascimento;
+    public String getNascimento() {
+        return new SimpleDateFormat("dd/MM/yyyy").format(this.nascimento);
     }
     
     public void setNascimento(String data) {
@@ -47,20 +69,23 @@ public class Cliente {
         return this.desconto;
     }
     
-    public void setDesconto(int desconto) {
-        this.desconto = desconto;
+    public void setDesconto(int l_desconto) {
+        this.desconto = l_desconto;
     }
     
     public Perfil getPerfil() {
         return this.perfil;
     }
     
-    public void setPerfil(Perfil perfil) {
-        this.perfil = perfil;
+    public void setPerfil(Perfil l_perfil) {
+        this.perfil = l_perfil;
     }
 
-    boolean getPerfil(Date emissaoCNH) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public String toString() {       
+        String data = new SimpleDateFormat("dd/MM/yyyy").format(this.nascimento);
+            
+        return "Cliente{" + "nome=" + this.nome + ", nascimento=" + data + ", desconto=" + this.desconto + ", perfil=" + this.perfil + '}';
     }
-    
+      
 }
